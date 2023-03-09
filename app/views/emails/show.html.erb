@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+<%= turbo_frame_tag "show_email" do %>
+<h3>Le titre de l'email est : <%= @email.object %></h3>
+  <h5><%= @email.body %></h5>
+
+
+<div>
+  
+  <%= link_to "Back to emails", emails_path,  class: "btn btm-sm btn-success"%> 
+
+  
+</div>
+<% end %>

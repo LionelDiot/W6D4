@@ -1,0 +1,19 @@
+
+  <%= turbo_frame_tag email do %>
+  
+  <div class="card text-center">
+    <div class="card-body text-center">
+      <h5><%= link_to email.object, email_path(email), data: { turbo_frame: "show_email" } %></h5>
+      <div class="container">
+        <%= link_to "Delete",
+                      email_path(email),
+                      method: :delete,
+                      class: "btn btn-danger", data: {turbo_method: "delete"} %> | 
+        <%= link_to "Edit",
+                    edit_email_path(email),
+                    class: "btn btn-info" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+  

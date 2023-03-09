@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<hr class="my-4">
+
+<h1 class="text-center">Gestion des Emails en Turbo &hearts; </h1>
+
+<div class=" container ">
+<%= turbo_frame_tag "new_email" do %>
+      
+  <%= link_to 'Genere un nouvel email !', new_email_path, data: { turbo_frame: "new_email" }, class: "btn btn-secondary" %>
+<% end %>
+</div>
+
+<hr class="my-4">
+
+<div class="container">
+  <div class="row">
+  <%= turbo_stream_from "emails" %>
+    <div  class="col-md-6" id="emails">
+          <%= render @emails %>
+    </div>
+
+    <div class="col-md-6">
+           
+      <%= turbo_frame_tag "show_email" do %>
+      <h3>Render  ICI :</h3>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
+
