@@ -8,7 +8,7 @@
         <%= link_to "Delete",
                       email_path(email),
                       method: :delete,
-                      class: "btn btn-danger", data: {turbo_method: "delete"} %> | 
+                      class: "btn btn-danger", data: {turbo_method: "delete", turbo_frame: "_top"} %> | 
         <%= link_to "Edit",
                     edit_email_path(email),
                     class: "btn btn-info" %>

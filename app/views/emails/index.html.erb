@@ -1,5 +1,5 @@
 <p style="color: green"><%= notice %></p>
-
+<%= turbo_stream_from "emails" %>
 <hr class="my-4">
 
 <h1 class="text-center">Gestion des Emails en Turbo &hearts; </h1>
@@ -7,8 +7,8 @@
 <div class=" container text-center">
 
       
-  <%= link_to 'Ecris un nouvel email !', new_email_path, data: { turbo_frame: "new_email" }, class: "btn btn-secondary" %>
- | 
+  
+ <%= link_to 'Ecris un nouvel email !', new_email_path, data: { turbo_frame: "new_email" }, class: "btn btn-secondary" %> |
 <%= link_to 'Genere un email aléatoire !', generate_email_path, data: { turbo_method: "post"}, method: :post, class: "btn btn-success" %>
 </div>
 
@@ -16,7 +16,7 @@
 
 <div class="container">
   <div class="row">
-  <%= turbo_stream_from "emails" %>
+  
     <div  class="col-md-6" id="emails">
           <%= render @emails %>
     </div>
@@ -27,6 +27,7 @@
       <h3>Render  ICI :</h3>
       <% end %>
       <%= turbo_frame_tag "new_email" do %>
+      
       <% end %>
     </div>
   </div>
